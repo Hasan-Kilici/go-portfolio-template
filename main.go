@@ -15,26 +15,30 @@ func handle(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	name := ""
-	if r.URL.Path == "/" {
-		name = "index.html"
-	} else if r.URL.Path == "/hakkimda"{
-    name = "hakkimda.html"
+    name := ""
+     if r.URL.Path == "/" {
+    name = "index.html"
+    } else if r.URL.Path == "/hakkimda"{
+   /* İsteğe bağlı
+   name = "hakkimda.html"
+   */
     } else if r.URL.Path == "/sosyal-medya" {
+    /* İsteğe bağlı
     name = "sosyal-medya.html"
+    */
     } else {
-		name = path.Base(r.URL.Path)
-	}
+    name = path.Base(r.URL.Path)
+    }
 
-	data := struct{
-		Time time.Time
+  data := struct{
+    Time time.Time
     Author string
     Hakkimda string
     Discord string
     Github string
     PP string
   }{
-		Time: time.Now(),
+    Time: time.Now(),
     Author: "Sitenin sahibi",
     Hakkimda: `Lorem Ipsum
 "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
