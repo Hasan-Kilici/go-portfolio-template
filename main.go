@@ -47,7 +47,7 @@ func handle(w http.ResponseWriter, r *http.Request) {
   Github: "https://github.com/hasan-kilici",
   PP: "/static/32.png",
 	}
-
+//PPye /static/ içerisine attığınız fotoğrafın dosya adını ve uzantısını girin
 	if err := tmpl.ExecuteTemplate(w, name, data); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		fmt.Println("error", err)
